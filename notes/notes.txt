@@ -38,3 +38,11 @@ https://eslint.org/docs/user-guide/getting-started
 
 ________________
 
+React router DOM: como configurar a navegação da nossa aplicação para que ela tenha múltiplas páginas.
+
+Para isso, vamos instalar a biblioteca React Router DOM: https://reactrouter.com/
+e iremos estruturar a navegação da nossa aplicação.
+
+________________
+
+Context Providers -> Como o ThemeProvider e BrowserRouter , sao components q nao teem efeito visual, mas produzem o contexto para os compoenents dentro deles
