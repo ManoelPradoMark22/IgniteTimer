@@ -70,3 +70,10 @@ const BaseInput = styled.input`
   height: 2.5rem;
   border: 0;
   bor
+
+
+________________
+
+temos varios elementos em colunas. o border-collapsse: collapse faz com q exista apenas uma borda entre os elementos (para qnd aplicar a borda, nao ficar uma na esquerda e uma na direita, ai fica 1 apenas p ambas)
+
+border-collapse: collapse;
