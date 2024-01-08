@@ -46,3 +46,6 @@ e iremos estruturar a navegação da nossa aplicação.
 ________________
 
 Context Providers -> Como o ThemeProvider e BrowserRouter , sao components q nao teem efeito visual, mas produzem o contexto para os compoenents dentro deles
+
+use the BrowserRouter (context provider) to englobe the Router component
+
