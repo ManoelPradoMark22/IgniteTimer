@@ -49,3 +49,24 @@ Context Providers -> Como o ThemeProvider e BrowserRouter , sao components q nao
 
 use the BrowserRouter (context provider) to englobe the Router component
 
+________________
+
+inherit -> faz herdar aquela propriedade do pai
+
+export const FormContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: ${(props) => props.theme['gray-100']};
+  font-size: 1.125rem;
+  font-weight: bold;
+  flex-wrap: wrap;
+`
+const BaseInput = styled.input`
+  font-size: inherit;  /*  /HERE - herdando do FormContainer*/
+  background: transparent;
+  height: 2.5rem;
+  border: 0;
+  bor
