@@ -171,3 +171,17 @@ ________________
 
   const task = watch('task') //component de input q criamos com o register
   const isSubmitDisabled = !task
+
+  ________________
+
+  bibliotecas de validação
+  yup, joi, zod
+  //zod
+   - para integrar a lib de validacao com o react hook form, devemos instalar:
+   npm i @hookform/resolvers
+   e usar: import { zodResolver } from '@hookform/resolvers/zod'
+
+   -----
+
+   import * as zod from 'zod'
+   usamos essa sintaxe quando a biblioteca nao tem um export default
