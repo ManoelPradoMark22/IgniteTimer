@@ -120,3 +120,8 @@ ________________
  quando mantemos em tempo real o estado/informação (input do usuário) que o usuário insere na aplicação, dentro do estado
  traz muita fluidez para a aplicação no sentido de termos praticidade ao podermos utilzar o estado mais atualizado
  maaaasssss.... sempre que atualizamos o estado, causamos uma nova renderização (recalcula todo o conteúdo do componente e estado) - se tivermos uma aplicação muito complexa com mtos componentes aninhados etc, pode gerar gargalo (nem sempre, mas neses casos complexos pode gerar)
+
+- uncontrolled components 
+ a gente busca a info do valor do input somente quando precisarmos dela
+ não monitora o valor digitado em tempo real
+ casos de uso -> dashboards complexos com mtos components

@@ -8,26 +8,22 @@ import {
   StartCountdownButton,
   TaskInput,
 } from './styles'
-import { useState } from 'react'
 
 export function Home() {
-  const [task, setTask] = useState('')
-
-  function resetForm() {
-    setTask('')
+  function handleSubmit(event) {
+    console.log(event.target.task.value)
   }
 
   return (
     <HomeContainer>
-      <form action="">
+      <form onSubmit={handleSubmit} action="">
         <FormContainer>
           <label htmlFor="task">I will work on</label>
           <TaskInput
             id="task"
+            name="task"
             list="task-suggestions"
             placeholder="Give your project a name"
-            onChange={(e) => setTask(e.target.value)}
-            value={task}
           />
 
           <datalist id="task-suggestions">
@@ -58,7 +54,7 @@ export function Home() {
           <span>0</span>
         </CountdownContainer>
 
-        <StartCountdownButton disabled={!task} type="submit">
+        <StartCountdownButton type="submit">
           <Play size={24} />
           Start
         </StartCountdownButton>
