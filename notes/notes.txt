@@ -228,3 +228,21 @@ export function Home() {
   function handleCreateNewCycle(data: NewCycleFormatData) {
     console.log(data)
   }
+
+________________
+
+//reset()
+
+  const { register, handleSubmit, watch, reset } = useForm<NewCycleFormatData>({
+    resolver: zodResolver(newCycleFormValidationSchema),
+    defaultValues: {
+      task: '',
+      minutesAmount: 0,
+    },
+  })
+
+  function handleCreateNewCycle(data: NewCycleFormatData) {
+    console.log(data)
+    reset()
+  }
+    -> Reset vai voltar para os valores default que colocamos no useForm!!!
