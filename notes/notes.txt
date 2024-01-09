@@ -185,3 +185,46 @@ ________________
 
    import * as zod from 'zod'
    usamos essa sintaxe quando a biblioteca nao tem um export default
+
+   -----
+
+   const { register, handleSubmit, watch, formState } = useForm({
+    resolver: zodResolver(newCycleFormValidationSchema),
+  })
+
+  console.log(formState.errors)
+
+  --------------
+
+  inferindo os tipos do formulario com o Zod
+  https://github.com/colinhacks/zod?tab=readme-ov-file#basic-usage
+
+  const newCycleFormValidationSchema = zod.object({
+  task: zod.string().min(1, 'Enter the task'),
+  minutesAmount: zod
+    .number()
+    .min(5, 'The cycle must be at least 5 minutes')
+    .max(60, 'The cycle must be a maximum of 60 minutes'),
+})
+
+// para criar manualmente
+// interface NewCycleFormatData {
+//   task: string
+//   minutesAmount: number
+// }
+
+// para inferir automaticamente
+type NewCycleFormatData = zod.infer<typeof newCycleFormValidationSchema>
+
+export function Home() {
+  const { register, handleSubmit, watch } = useForm<NewCycleFormatData>({
+    resolver: zodResolver(newCycleFormValidationSchema),
+    defaultValues: {
+      task: '',
+      minutesAmount: 0,
+    },
+  })
+
+  function handleCreateNewCycle(data: NewCycleFormatData) {
+    console.log(data)
+  }
