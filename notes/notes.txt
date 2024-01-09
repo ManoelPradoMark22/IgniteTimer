@@ -77,3 +77,40 @@ ________________
 temos varios elementos em colunas. o border-collapsse: collapse faz com q exista apenas uma borda entre os elementos (para qnd aplicar a borda, nao ficar uma na esquerda e uma na direita, ai fica 1 apenas p ambas)
 
 border-collapse: collapse;
+
+________________
+
+
+const STATUS_COLOR = {
+  yellow: 'yellow-500',
+  green: 'green-500',
+  red: 'red-500',
+}
+esse é lido assim pelo TS:
+const STATUS_COLOR = {
+  yellow: string,
+  green: string,
+  red: string
+}
+
+
+const STATUS_COLOR = {
+  yellow: 'yellow-500',
+  green: 'green-500',
+  red: 'red-500',
+} as const
+esse já é lido pelos valores de cada chave do objeto!!! como constante!!!
+
+________________
+
+const STATUS_COLOR = {
+  yellow: 'yellow-500',
+  green: 'green-500',
+  red: 'red-500',
+} as const
+
+interface StatusProps {
+  statusColor: keyof typeof STATUS_COLOR
+}
+usa o: keyof typeof  pq estamos no arquivo TS !!!
+
