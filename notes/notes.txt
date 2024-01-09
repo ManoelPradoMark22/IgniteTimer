@@ -125,3 +125,49 @@ ________________
  a gente busca a info do valor do input somente quando precisarmos dela
  não monitora o valor digitado em tempo real
  casos de uso -> dashboards complexos com mtos components
+
+ ________________
+
+ lib: react-hook-form
+ consegue trabalhar com os compoenents, tanto de uma forma controlled quanto tb de uma forma uncontrolled
+   -> const { register, handleSubmit } = useForm()
+   useForm() -> como se estivessemos criando um novo formulario na nossa aplicação
+   register -> quais sao os campos q vamos ter no nosso formulário?
+
+   {...register('task')}
+   {...register('minutesAmount', { valueAsNumber: true })}
+
+   function register(name: string) {
+    return {
+      onChange: () => void,
+      onBlur: () => void,
+      onFocus: () => void,
+      .....
+    }
+   }
+
+   -------
+  //handleSubmit
+  const { register, handleSubmit } = useForm()
+
+  function handleCreateNewCycle(data) { //nossa funcao
+    console.log(data)
+  }
+
+  return (
+    <HomeContainer>
+      <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
+        <FormContainer>
+        ......
+   -------
+  
+  //watch
+  export function Home() {
+  const { register, handleSubmit, watch } = useForm()
+
+  function handleCreateNewCycle(data) {
+    console.log(data)
+  }
+
+  const task = watch('task') //component de input q criamos com o register
+  const isSubmitDisabled = !task
