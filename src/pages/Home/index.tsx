@@ -30,7 +30,8 @@ interface Cycle {
   id: string
   task: string
   minutesAmount: number
-  startDate: Date
+  startDate?: Date
+  interruptedDate?: Date
 }
 
 export function Home() {
@@ -80,6 +81,20 @@ export function Home() {
       clearInterval(interval)
     }
   }, [activeCycle])
+
+  function handleInterruptCycle() {
+    setCycles(
+      cycles.map((cycle) => {
+        if (cycle.id === activeCycleId) {
+          return { ...cycle, interruptedDate: new Date() }
+        } else {
+          return cycle
+        }
+      }),
+    )
+
+    setActiveCycleId(null)
+  }
 
   const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0
   const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0
@@ -143,7 +158,7 @@ export function Home() {
         </CountdownContainer>
 
         {activeCycle ? (
-          <StopCountdownButton type="button">
+          <StopCountdownButton onClick={handleInterruptCycle} type="button">
             <HandPalm size={24} />
             Stop
           </StopCountdownButton>
