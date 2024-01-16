@@ -255,3 +255,7 @@ ________________
 
  PROP DRILLING -> Qnd temos mtas props apenas para comunicação entre components
  CONTEXT API -> Permite compartilharmos informações entre vários componentes ao mesmo tempo
+
+ ________________
+
+ createContext() -> 1º parâmetro é o valor inicial
