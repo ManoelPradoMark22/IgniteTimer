@@ -253,3 +253,5 @@ queremos que nossa Sring tenha o tamanho de 2 caracteres e , qnd ela nao tiver e
 
 ________________
 
+ PROP DRILLING -> Qnd temos mtas props apenas para comunicação entre components
+ CONTEXT API -> Permite compartilharmos informações entre vários componentes ao mesmo tempo
