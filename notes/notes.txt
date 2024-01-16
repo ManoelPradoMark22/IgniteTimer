@@ -246,3 +246,7 @@ ________________
     reset()
   }
     -> Reset vai voltar para os valores default que colocamos no useForm!!!
+________________
+
+const minutes = String(minutesAmount).padStart(2, '0')
+queremos que nossa Sring tenha o tamanho de 2 caracteres e , qnd ela nao tiver esse tamanho, queremos inserir o caracter '0' no inicio
