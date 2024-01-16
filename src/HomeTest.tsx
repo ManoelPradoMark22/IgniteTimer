@@ -1,6 +1,11 @@
 import { createContext, useContext, useState } from 'react'
 
-const CyclesContext = createContext({
+interface CyclesContextProps {
+  activeCycle: number
+  setActiveCycle(arg: number): void
+}
+
+const CyclesContext = createContext<CyclesContextProps>({
   activeCycle: 1,
   setActiveCycle: () => {},
 })
