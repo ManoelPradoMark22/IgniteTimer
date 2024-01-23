@@ -12,7 +12,6 @@ interface CyclesContextType {
   activeCycleId: string | null
   amountSecondsPassed: number
   markCurrentCycleAsFinished: () => void
-  clearActiveCycleId: () => void
   setSecondsPassed: (seconds: number) => void
   createNewCycle: (data: CreateCycleData) => void
   interruptCurrentCycle: () => void
@@ -80,10 +79,6 @@ export function CyclesContextProvider({
     })
   }
 
-  function clearActiveCycleId() {
-    setActiveCycleId(null)
-  }
-
   return (
     <CyclesContext.Provider
       value={{
@@ -91,7 +86,6 @@ export function CyclesContextProvider({
         activeCycle,
         activeCycleId,
         markCurrentCycleAsFinished,
-        clearActiveCycleId,
         amountSecondsPassed,
         setSecondsPassed,
         createNewCycle,
